@@ -712,4 +712,375 @@ footer .footer-copyright {
 
 }
 
+/*---------------------------------------
+   title hover         
+-----------------------------------------*/
+.r-link{
+  display: var(--rLinkDisplay, inline-flex) !important;
+}
 
+.r-link[href]{
+  color: var(--rLinkColor) !important;
+  text-decoration: var(--rLinkTextDecoration, none) !important;
+}
+
+/* 
+outlined text
+*/ 
+
+.text-outlined{
+  --uiTextOutlinedWeight: var(--textOutlinedWeight, 2px);
+  --uiTextOutlinedLineColor: var(--textOutlinedLineColor, currentColor);
+
+  padding: var(--textOutlinedPadding, .25rem);
+  position: var(--textOutlinedPosition, relative);
+}
+
+.text-outlined__label{
+  display: var(--textOutlinedLabelDisplay, block);
+}
+
+.text-outlined::before,
+.text-outlined::after,
+.text-outlined__label::before,
+.text-outlined__label::after{
+  content: "";     
+  background-color: var(--uiTextOutlinedLineColor);
+  position: absolute; 
+}
+
+.text-outlined::before, 
+.text-outlined::after{
+  width: 100%;
+  height: var(--uiTextOutlinedWeight);
+  left: 0;
+}
+
+.text-outlined__label::before,
+.text-outlined__label::after{
+  width: var(--uiTextOutlinedWeight);
+  height: 100%;
+  top: 0;
+}
+
+.text-outlined::before{
+  top: 0;
+}
+
+.text-outlined::after{
+  bottom: 0;
+}
+
+.text-outlined__label::before{
+  left: 0;
+}
+
+.text-outlined__label::after{
+  right: 0;
+}
+
+/*
+adapters
+*/
+
+.text-outlined:not(.r-link):not(.r-button){
+  display: var(--textOutlinedDisplay, inline-flex);
+  color: var(--textOutlinedColor, currentColor);
+}
+
+.text-outlined.r-link{
+  --rLinkDisplay: var(--textOutlinedDisplay);
+  --rLinkColor: var(--textOutlinedColor, currentColor);
+}
+
+/*
+underlined text https://github.com/melnik909/text-underlined
+*/
+
+.text-underlined{
+  /*
+  1. I use pixels units because others units (em, rem, vw, vh, etc) can
+  lead to the mistake of displaying a circumcised line
+  */
+
+  --uiTextUnderlinedLineHeight: var(--textUnderlinedLineHeight, 2px); /* 1 */
+  --uiTextUnderlinedLineGap: var(--textUnderlinedLineGap, .5rem);
+  --uiTextUnderlinedPaddingBottom: calc(var(--uiTextUnderlinedLineHeight) + var(--uiTextUnderlinedLineGap));
+
+  padding-bottom: var(--uiTextUnderlinedPaddingBottom) !important;
+  position: var(--textUnderlinedPosition, relative) !important;
+}
+
+.text-underlined::after{
+  content: "";
+  width: var(--textUnderlinedLineWidht, 100%) !important;
+  height: var(--uiTextUnderlinedLineHeight) !important;
+
+  background-color: var(--textUnderlinedLineColor, currentColor) !important;
+
+  position: absolute;
+  left: var(--textUnderlinedLineLeft, 0) !important;
+  bottom: var(--textUnderlinedLineBottom, 0) !important;
+}
+
+/* 
+flat text
+*/ 
+
+.text-flat{
+  padding: var(--textFlatPadding, .25rem);
+  position: relative;
+  z-index: 0;
+}
+
+.text-flat::before, 
+.text-flat::after{
+  content: "";
+  background-color: var(--textFlatBackgroundColor, #000);   
+  position: absolute;
+  z-index: -1;
+}
+
+/*
+=====
+CORE STYLES
+=====
+*/
+
+.link__label{
+  display: block;
+}
+
+/* 
+text-outlined extension
+*/ 
+
+.text-outlined{
+  overflow: hidden;
+}
+
+/*
+!!! TEST #1!!!
+
+Task: Create the component for animation 1, 5, 6 where the animation is set using custom properties
+*/
+
+.text-outlined_v1-test{
+  --textOutlineTopLineTransform: translate3d(-105%, 0, 0);
+  --textOutlineBottomLineTransform: translate3d(105%, 0, 0);
+  --textOutlineLeftLineTransform: translate3d(0%, -100%, 0);
+  --textOutlineRightLineTransform: translate3d(0%, 100%, 0);
+}
+
+.text-outlined-test::before{
+  transform: var(--textOutlineTopLineTransform);
+}
+
+.text-outlined-test::after{
+  transform: var(--textOutlineBottomLineTransform);
+}
+
+.text-outlined-test .text-outlined__label::before{
+  transform: var(--textOutlineLeftLineTransform);
+}
+
+.text-outlined-test .text-outlined__label::after{
+  transform: var(--textOutlineRightLineTransform);
+  transition: 
+    var(--textOutlineRightLineTransitionProperty) 
+    var(--textOutlineRightLineTransitionDuration .2s, .15s) 
+    var(--textOutlineRightLineTransitionTimingFuntion, ease-out) 
+    var(--textOutlineRightLineTransitionDelay, 0s, .15s);
+}
+
+.text-outlined-test::before,
+.text-outlined-test::after,
+.text-outlined-test .text-outlined__label::before,
+.text-outlined-test .text-outlined__label::after{
+  transition-timing-function: ease-out;
+  transition-duration: .2s, .15s;
+  transition-delay: 0s, .15s;
+}
+
+.text-outlined-test:hover::before,
+.text-outlined-test:hover::after,
+.text-outlined-test:hover .text-outlined__label::before,
+.text-outlined-test:hover .text-outlined__label::after{
+  transform: translate3d(0, 0, 0);
+  transition-duration: .25s;
+  transition-delay: 0s;
+}
+
+.text-outlined-test::before,
+.text-outlined-test::after,
+.text-outlined-test .text-outlined__label::before,
+.text-outlined-test .text-outlined__label::after{
+  opacity: 0;
+  will-change: transform, opacity;
+  transition-property: transform, opacity;
+}
+
+.text-outlined-test:hover::before,
+.text-outlined-test:hover::after,
+.text-outlined-test:hover .text-outlined__label::before,
+.text-outlined-test:hover .text-outlined__label::after{
+  opacity: 1;
+}
+/* !!! END TEST */
+
+.text-outlined::before,
+.text-outlined::after,
+.text-outlined__label::before,
+.text-outlined__label::after{
+  opacity: 0;
+  will-change: transform, opacity;
+  transition-property: transform, opacity;
+}
+
+.text-outlined:hover::before,
+.text-outlined:hover::after,
+.text-outlined:hover .text-outlined__label::before,
+.text-outlined:hover .text-outlined__label::after{
+  opacity: 1;
+}
+
+/*
+text-underlined extension
+*/
+
+.text-underlined{
+  overflow: hidden;
+}
+
+/* 
+flat text extension
+*/ 
+
+.text-flat{
+  overflow: hidden;
+  transition: color .3s ease-out;
+}
+
+.text-flat::before, 
+.text-flat::after{
+  opacity: 0;   
+  transition-property: transform, opacity;
+  transition-timing-function: ease-out;
+  transition-delay: var(--textFlatTransitionDelay, 0, .03s);
+  transition-duration: var(--textFlatTransitionDuration, .2s)
+}
+
+.text-flat:hover::before, 
+.text-flat:hover::after{
+  opacity: 1;
+  transition-duration: var(--textFlatTransitionDurationHover, .35s);
+  transition-delay: var(--textFlatTransitionDelayHover, 0s);
+}
+
+.text-flat:not(.r-link):hover{
+  color: var(--textFlatColorHover, #fff);
+}
+
+.r-link.text-flat:hover{
+  --rLinkColor: var(--textFlatColorHover, #fff);
+}
+
+.flat__label{
+  display: block;
+}
+
+/* 
+sliding text
+*/ 
+
+.text-sliding{
+  position: relative;
+  overflow: hidden;
+}
+
+.text-sliding::before{
+  content: attr(data-link-text);
+  color: var(--uiLinkTextColorHover);
+  position: absolute;
+}
+
+.text-sliding::before, 
+.text-sliding .link__label{
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(.86, .6, .08, 1.01); 
+  transition-duration: .3s;
+}
+
+.text-sliding:hover::before,
+.text-sliding:hover .link__label{
+  transition-duration: .4s;
+}
+
+.text-sliding__label{
+  display: block;
+}
+
+/* 
+effect 1 
+*/
+
+.text-outlined_v1::before{
+  transform: translate3d(-105%, 0, 0);
+}
+
+.text-outlined_v1::after{
+  transform: translate3d(105%, 0, 0);
+}
+
+.text-outlined_v1 .text-outlined__label::before{
+  transform: translate3d(0%, -100%, 0);
+}
+
+.text-outlined_v1 .text-outlined__label::after{
+  transform: translate3d(0%, 100%, 0);
+}
+
+.text-outlined_v1::before,
+.text-outlined_v1::after,
+.text-outlined_v1 .text-outlined__label::before,
+.text-outlined_v1 .text-outlined__label::after{
+  transition-timing-function: ease-out;
+  transition-duration: .2s, .15s;
+  transition-delay: 0s, .15s;
+}
+
+.text-outlined_v1:hover::before,
+.text-outlined_v1:hover::after,
+.text-outlined_v1:hover .text-outlined__label::before,
+.text-outlined_v1:hover .text-outlined__label::after{
+  transform: translate3d(0, 0, 0);
+  transition-duration: .25s;
+  transition-delay: 0s;
+}
+
+.link10{
+  --textFlatTransitionDuration: .28s;
+  --textFlatTransitionDurationHover: .18s;
+}
+
+.link10::before,
+.link10::after{
+  width: 100%;
+  height: 50%;
+  left: 0;
+}
+
+.link10::before{
+  top: 0;
+  transform: translate3d(0, -50%, 0);
+}
+
+.link10::after{
+  bottom: 0;
+  transform: translate3d(0, 50%, 0);
+}
+
+.link10:hover::before,
+.link10:hover::after{
+  transform: translate3d(0, 0, 0);
+}
