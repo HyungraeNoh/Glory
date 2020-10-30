@@ -1080,6 +1080,16 @@ effect 1
   transform: translate3d(0, 50%, 0);
 }
 
+#titleEn::before,
+#titleKo::after{
+	visibility:hidden
+}
+
+#titleEn::after,
+#titleKo::before{
+	visibility:hidden
+}
+
 .link10:hover::before,
 .link10:hover::after{
   transform: translate3d(0, 0, 0);
