@@ -9,9 +9,9 @@
         <meta name="keywords" content="jquery, css3, 3d, webkit, fallback, slider, css3, 3d transforms, slices, rotate, box, automatic" />
 		<meta name="author" content="Pedro Botelho for Codrops" />
 		<!--<link rel="shortcut icon" href="../favicon.ico"> -->
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="css/slicebox.css" />
-		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+        <link rel="stylesheet" href="css/demo.css" />
+		<link rel="stylesheet" href="css/slicebox.css" />
+		<link rel="stylesheet" href="css/custom.css" />
 		<script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
 	</head>
 	<body>
@@ -167,15 +167,15 @@ Page.init();
 
 var Page = (function() {
 
-	var $navArrows = $( '#nav-arrows' ).hide(),
-        $navOptions = $( '#nav-options' ).hide(),
-		$shadow = $( '#shadow' ).hide(),
-		slicebox = $( '#sb-slider' ).slicebox( {
+	 $( '#nav-arrows' ).hide();
+     $( '#nav-options' ).hide();
+	 $( '#shadow' ).hide();
+	var	slicebox = $( '#sb-slider' ).slicebox( {
 			onReady : function() {
 
-				$navArrows.show();
-                $navOptions.show();
-				$shadow.show();
+				$( '#nav-arrows' ).show();
+				$( '#nav-options' ).show();
+				$( '#shadow' ).show();
 
 			},
 			orientation : 'r',
@@ -191,14 +191,14 @@ var Page = (function() {
 		initEvents = function() {
 
 			// add navigation events
-			$navArrows.children( ':first' ).on( 'click', function() {
+			$( '#nav-arrows' ).children( ':first' ).on( 'click', function() {
 
 				slicebox.next();
 				return false;
 
 			} );
 
-			$navArrows.children( ':last' ).on( 'click', function() {
+			$( '#nav-arrows' ).children( ':last' ).on( 'click', function() {
 				
 				slicebox.previous();
 				return false;
@@ -223,7 +223,7 @@ var Page = (function() {
 
 		return { init : init };
 
-})();
+});
     
 $(document).ready(function(){
 	
