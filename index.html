@@ -1,249 +1,244 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
+    <head>
+        <title>Seoul Beauty Catalogue</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Slicebox - 3D Image Slider with Fallback" />
+        <meta name="keywords" content="jquery, css3, 3d, webkit, fallback, slider, css3, 3d transforms, slices, rotate, box, automatic" />
+		<meta name="author" content="Pedro Botelho for Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/slicebox.css" />
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+		<script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
+	</head>
+	<body>
+		<div class="container">
 
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="description" content="">
-<meta name="keywords" content="">
-<meta name="author" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+			<!--<div class="codrops-top clearfix">
+				<a href="http://tympanus.net/Development/AutomaticImageMontage/"><span>&laquo; Previous Demo: </span>Automatic Image Montage</a>
+				<span class="right">
+					<a target="_blank" href="http://www.flickr.com/photos/strupler/">Images by <strong>ND Strupler</strong></a>
+					<a href="http://tympanus.net/codrops/?p=5657"><strong>Back to the Codrops Article</strong></a>
+				</span>
+			</div>-->
 
-<title>Seoul Beauty - Minimal Catalog</title>
+            <h1><a href="/html/home.html">서울 뷰티<span>Wellcome to Seoul Beauty Catalogue</span></a></h1>
+			
+		
 
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
+			<div class="wrapper">
 
-<!-- Main css -->
-<link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet">
+				<ul id="sb-slider" class="sb-slider">
+					<li>
+						<a href="/html/home.html" target="_blank"><img src="images/%EB%AF%B8%EC%9A%A9%EC%8B%A4.png" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>Creative Lifesaver</h3>
+						</div>
+					</li>
+					<li>
+						<a href="/html/home.html" target="_blank"><img src="images/%EB%AF%B8%EC%9A%A9%EC%8B%A42.png" alt="image2"/></a>
+						<div class="sb-description">
+							<h3>Honest Entertainer</h3>
+						</div>
+					</li>
+					<li>
+						<a href="/html/home.html" target="_blank"><img src="images/%EB%AF%B8%EC%9A%A9%EC%8B%A43.png" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>Brave Astronaut</h3>
+						</div>
+					</li>
+					<li>
+						<a href="/html/home.html" target="_blank"><img src="images/%EC%83%B4%ED%91%B8%EC%8B%A4.png" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>Affectionate Decision Maker</h3>
+						</div>
+					</li>
+					<!--<li>
+						<a href="http://www.flickr.com/photos/strupler/2969119944" target="_blank"><img src="images/.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>Faithful Investor</h3>
+						</div>
+					</li>
+					<li>
+						<a href="http://www.flickr.com/photos/strupler/2968126177" target="_blank"><img src="images/6.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>Groundbreaking Artist</h3>
+						</div>
+					</li>
+					<li>
+						<a href="http://www.flickr.com/photos/strupler/2968945158" target="_blank"><img src="images/7.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>Selfless Philantropist</h3>
+						</div>
+					</li>-->
+				</ul>
 
-</head>
-<body>
+				<div id="shadow" class="shadow"></div>
 
-<!-- PRE LOADER -->
+				<div id="nav-arrows" class="nav-arrows">
+					<a href="#">Next</a>
+					<a href="#">Previous</a>
+				</div>
 
-<div class="preloader">
-     <div class="sk-spinner sk-spinner-wordpress">
-          <span class="sk-inner-circle"></span>
-     </div>
-</div>
+				<div id="nav-options" class="nav-options">
+					<span id="navPlay">Play</span>
+					<span id="navPause">Pause</span>
+				</div>
 
-<!-- Navigation section  -->
+			</div><!-- /wrapper -->
 
-<div class="navbar navbar-default navbar-static-top" role="navigation">
-     <div class="container">
+			<p class="info"><strong>서울뷰티 카다로그를 방문해 주셔서 감사합니다. </strong> <!--Slideshow with play &amp; pause and horizontal slices--></p>
 
-          <div class="navbar-header">
-               <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon icon-bar"></span>
-                    <span class="icon icon-bar"></span>
-                    <span class="icon icon-bar"></span>
-               </button>
-               <!--<a href="index.html" class="navbar-brand"><i class="fa fa-magnet"></i></a>-->
-               <a href="index.html" class="navbar-brand"><img src="images/seoulCo.png" style="width: 110px; display: inline-block; position: absolute;"></a>
-          </div>
-          <div class="collapse navbar-collapse">
-               <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="about.html">Our Studio</a></li>
-                    <li><a href="Issue.html">Issue</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-               </ul>
-          </div>
+		</div>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.slicebox.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				var Page = (function() {
 
-  </div>
-</div>
+					var $navArrows = $( '#nav-arrows' ).hide(),
+                        $navOptions = $( '#nav-options' ).hide(),
+						$shadow = $( '#shadow' ).hide(),
+						slicebox = $( '#sb-slider' ).slicebox( {
+							onReady : function() {
 
-<!-- Home Section -->
+								$navArrows.show();
+                                $navOptions.show();
+								$shadow.show();
 
-<section id="home">
-     <div class="container">
-          <div class="row">
-               <div class="col-md-12 col-sm-12">
-                    <div class="section">
-                        <div class="blog-post-image">
-                            <a href="single-post.html">
-                                <img src="images/%EC%83%B4%ED%91%B8%EC%8B%A4.png" class="img-responsive" alt="Blog Image">
-                            </a>
-                        </div>
-                        <div class="section__item">
-                            <a href="#0" class="r-link link text-flat link10">
-                        	   <span class="link__label" id="titleKo"><h2>서울 뷰티 의자 &토탈 시스템에 오신걸 환영합니다. 우리는 전문 기술자이며 브랜드 독립성에 중점을 두어 최고의 서비스를 제공합니다.</h2></span>
-                          	 <span class="link__label" id="titleEn"><h2>The creative Beauty Chair & Total System. we are Professional technicians and focused on brand identity, provide the best service.</h2></span>
-                            </a>
-                        </div>
-                    </div>
-               </div>
-          </div>
-     </div>
-</section>
+							},
+							orientation : 'r',
+							cuboidsRandom : true,
+							disperseFactor : 30
+						} ),
+						
+						init = function() {
 
-<!-- Portfolio Section -->
+							initEvents();
+							
+						},
+						initEvents = function() {
 
-<section id="portfolio">
-     <div class="container">
-          <div class="row">
+							// add navigation events
+							$navArrows.children( ':first' ).on( 'click', function() {
 
-               <div class="col-md-4 col-sm-6">
-                    <a href="single-project.html">
-                         <div class="portfolio-thumb">
-                              <img src="images/%EB%8F%84%EA%B8%B01.jpeg" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Project Name</h3>
-                                             <small>Brand Identity</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
+								slicebox.next();
+								return false;
 
-               <div class="col-md-4 col-sm-6">
-                    <a href="products2.html">
-                         <div class="portfolio-thumb">
-                              <img src="images/%EB%8F%84%EA%B8%B02.jpeg" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Project Name</h3>
-                                             <small>Master Skils</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
+							} );
 
-               <div class="col-md-4 col-sm-6">
-                    <a href="products3.html">
-                         <div class="portfolio-thumb">
-                              <img src="images/%EB%8F%84%EA%B8%B03.jpeg" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Project Name</h3>
-                                             <small>Development</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
+							$navArrows.children( ':last' ).on( 'click', function() {
+								
+								slicebox.previous();
+								return false;
 
-               <div class="col-md-4 col-sm-6">
-                    <a href="products2.html">
-                         <div class="portfolio-thumb">
-                              <img src="images/%EB%8F%84%EA%B8%B04.jpeg" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Project Name</h3>
-                                             <small>Innovatory Design</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
+							} );
+                            
+                            $( '#navPlay' ).on( 'click', function() {
+								
+								slicebox.play();
+								return false;
 
-               <div class="col-md-4 col-sm-6">
-                    <a href="products3.html">
-                         <div class="portfolio-thumb">
-                              <img src="images/%EB%8F%84%EA%B8%B05.jpeg" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Project Name</h3>
-                                             <small>Social marketing</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
+							} );
 
-               <div class="col-md-4 col-sm-6">
-                    <a href="single-project.html">
-                         <div class="portfolio-thumb">
-                              <img src="images/%EB%8F%84%EA%B8%B06.jpeg" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Project Name</h3>
-                                             <small>Best Service</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
+							$( '#navPause' ).on( 'click', function() {
+								
+								slicebox.pause();
+								return false;
 
-               <div class="col-md-12 col-sm-12 text-center">
-                    <h3>hello, if you interest working together. just send message <a href="contact.html">contact page</a></h3>
-                    <br>
-            
-               </div>
+							} );
 
-          </div>
-     </div>
-</section>
+						};
 
-<!-- Footer Section -->
+						return { init : init };
 
-<footer>
-     <div class="container" >
-          <div class="row">
+				})();
 
-               <div class="col-md-3 col-sm-3">
-                    <img src="images/seoulCo.png" width="50%"/>
-                    <!--<i class="fa fa-magnet"></i>-->
-               </div>
+				Page.init();
 
-               <div class="col-md-4 col-sm-4">
-                    <p>경기도 시흥시 정왕동 266-3</p>
-                    <p>15, Douikk bangul-gil, Siheung-si, Gyeonggi-do (Jeongwang-dong) 266-3, Jeonghwang-dong, Siheung-si (15042) In Korea</p>
-               </div>
+			});
+            /*$(function() {
+				
+				var Page = (function() {
 
-               <div class="col-md-offset-1 col-md-4 col-sm-offset-1 col-sm-3">
-                    <p><a href="mailto:youremail@gmail.com">seoulbeautyCompany@google.co.kr</a></p>
-                    <p>010-6221-0799 / 031-432-0795</p>
-                    <p>(+82) 10-6221-0799 / 31-432-0795</p>
-               </div>
+					var $navArrows = $( '#nav-arrows' ).hide(),
+						$navOptions = $( '#nav-options' ).hide(),
+						$shadow = $( '#shadow' ).hide(),
+						slicebox = $( '#sb-slider' ).slicebox( {
+							onReady : function() {
 
-               <div class="clearfix col-md-12 col-sm-12">
-                    <hr>
-               </div>
+								$navArrows.show();
+								$navOptions.show();
+								$shadow.show();
 
-               <div class="col-md-6 col-sm-6">
-                    <div class="footer-copyright">
-                         <p>© 2020 Seoul Beauty Co. | Catalog.</p>
-                    </div>
-               </div>
+							},
+							orientation : 'h',
+							cuboidsCount : 3
+						} ),
+						
+						init = function() {
 
-               <div class="col-md-6 col-sm-6">
-                    <ul class="social-icon">
-                         <li><a href="#" class="fa fa-facebook"></a></li>
-                         <li><a href="#" class="fa fa-twitter"></a></li>
-                         <li><a href="#" class="fa fa-linkedin"></a></li>
-                    </ul>
-               </div>
-          </div>
-        <hr>
-        <h7> ☞ 홈페이지에서 개방 중인 자료 중 법제처가 저작권 전부를 갖고 있지 아니한 자료(다른 저작자와 저작권을 공유한 자료 등)의 경우에는 저작권 침해의 소지가 있으므로 단순 열람 외에 무단 복제·배포, 개작 등의 이용은 금지되며 이를 위반할 경우 관련법에 의거 법적 처벌을 받을 수 있음을 알려드립니다. ☜</h7>
-     </div>
-</footer>
+							initEvents();
+							
+						},
+						initEvents = function() {
 
+							// add navigation events
+							$navArrows.children( ':first' ).on( 'click', function() {
 
-<!-- SCRIPTS -->
+								slicebox.next();
+								return false;
 
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/custom.js"></script>
+							} );
+
+							$navArrows.children( ':last' ).on( 'click', function() {
+								
+								slicebox.previous();
+								return false;
+
+							} );
+
+							$( '#navPlay' ).on( 'click', function() {
+								
+								slicebox.play();
+								return false;
+
+							} );
+
+							$( '#navPause' ).on( 'click', function() {
+								
+								slicebox.pause();
+								return false;
+
+							} );
+
+						};
+
+						return { init : init };
+
+				})();
+
+				Page.init();
+
+			});*/
+		</script>
+	</body>
+</html>	
 
 <script type="text/javascript">
+    
+    
 $(document).ready(function(){
-	$("#titleEn").hide();
-	$(".link10").hover(function(){
-		$("#titleEn").show();
-		$("#titleKo").hide();
-	},function(){
-		$("#titleEn").hide();
-		$("#titleKo").show();
-	});
+    
+    $( '#navPlay' ).on( 'click', function() {
+        slicebox.play();
+    });
+    
+    $("#navPlay").trigger("click");
+   
 });
 </script>
-
-</body>
-</html>
-

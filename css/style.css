@@ -1080,6 +1080,16 @@ effect 1
   transform: translate3d(0, 50%, 0);
 }
 
+#titleKo{
+    color: black; 
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#titleEn{
+    color: white; 
+    text-shadow: 2px 2px 4px #000000;
+}
+
 #titleEn::before,
 #titleKo::after{
 	visibility:hidden

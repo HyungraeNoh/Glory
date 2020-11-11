@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Main</title>
+</head>
+<h1 id="titleKo">WellCome to Beauty Cop.</h1>
+<br><br><br><br>
+<div class="container">
+    <div id="carousel">
+        <figure><img src="images/%EB%AF%B8%EC%9A%A9%EC%8B%A4.png" alt=""></figure>
+        <figure><img src="images/%EB%AF%B8%EC%9A%A9%EC%8B%A42.png" alt=""></figure>
+        <figure><img src="images/%EB%AF%B8%EC%9A%A9%EC%8B%A43.png" alt=""></figure>
+        <figure><img src="images/%EB%8F%84%EA%B8%B0sub%20(1).jpeg" alt=""></figure>
+        <figure><img src="images/%EB%8F%84%EA%B8%B0sub%20(2).jpeg" alt=""></figure>
+        <figure><img src="images/%EB%8F%84%EA%B8%B0sub%20(3).jpeg" alt=""></figure>
+        <figure><img src="images/%EB%8F%84%EA%B8%B0sub%20(4).jpeg" alt=""></figure>
+        <figure><img src="images/%EB%8F%84%EA%B8%B0sub%20(5).jpeg" alt=""></figure>
+        <figure><img src="images/%EB%8F%84%EA%B8%B0sub%20(6).jpeg" alt=""></figure>
+    </div>
+</div>
+</html>
