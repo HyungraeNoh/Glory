@@ -166,16 +166,16 @@ Page.init();
 });*/
 
 var Page = (function() {
-
-	 $( '#nav-arrows' ).hide();
-     $( '#nav-options' ).hide();
-	 $( '#shadow' ).hide();
-	var	slicebox = $( '#sb-slider' ).slicebox( {
+   
+	 var $navArrows = $( '#nav-arrows' ).hide(),
+        $navOptions = $( '#nav-options' ).hide(),
+        $shadow = $( '#shadow' ).hide(),
+		slicebox = $( '#sb-slider' ).slicebox( {
 			onReady : function() {
 
-				$( '#nav-arrows' ).show();
-				$( '#nav-options' ).show();
-				$( '#shadow' ).show();
+				$navArrows.show();
+				$navOptions.show();
+				$shadow.show();
 
 			},
 			orientation : 'r',
@@ -191,14 +191,14 @@ var Page = (function() {
 		initEvents = function() {
 
 			// add navigation events
-			$( '#nav-arrows' ).children( ':first' ).on( 'click', function() {
+			$navArrows.children( ':first' ).on( 'click', function() {
 
 				slicebox.next();
 				return false;
 
 			} );
 
-			$( '#nav-arrows' ).children( ':last' ).on( 'click', function() {
+			$navArrows.children( ':last' ).on( 'click', function() {
 				
 				slicebox.previous();
 				return false;
@@ -227,7 +227,8 @@ var Page = (function() {
     
 $(document).ready(function(){
 	
-	Page.init();
+	var newPage = new Page();
+    newPage.init();
     
     $( '#navPlay' ).on( 'click', function() {
         slicebox.play();
