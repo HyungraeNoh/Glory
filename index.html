@@ -163,7 +163,7 @@ Page.init();
 
 });*/
 
-var Page = (function() {
+var Page = function() {
    
 	 var $navArrows = $( '#nav-arrows' ).hide(),
         $navOptions = $( '#nav-options' ).hide(),
@@ -221,7 +221,7 @@ var Page = (function() {
 
 		return { init : init };
 
-});
+}
     
 $(document).ready(function(){
 	
