@@ -9,11 +9,12 @@
         <meta name="keywords" content="jquery, css3, 3d, webkit, fallback, slider, css3, 3d transforms, slices, rotate, box, automatic" />
 		<meta name="author" content="Pedro Botelho for Codrops" />
 		<!--<link rel="shortcut icon" href="../favicon.ico"> -->
-        <link rel="stylesheet" href="css/demo.css" />
+        <link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/slicebox.css" />
 		<link rel="stylesheet" href="css/custom.css" />
 		<script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
-        <script type="text/javascript" src="js/jquery.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.slicebox.js"></script>
 	</head>
@@ -162,6 +163,7 @@ return { init : init };
 Page.init();
 
 });*/
+var slicebox = null;
 
 var Page = function() {
    
