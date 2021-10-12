@@ -1,0 +1,16 @@
+.center{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media all and (min-width: 768px) and (max-width : 1199px){
+    /*.center{ font-size: 50%;}*/
+    h1 {font-size: 43px;}
+}
+
+@media (max-width: 767px), screen and (orientation: portrait){
+    /*.center{ font-size: 50%;}*/
+    h1 {font-size: 35px;}
+}
